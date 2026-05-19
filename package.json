@@ -1,0 +1,14 @@
+{
+  "name": "kxco-public-verifier",
+  "version": "1.0.0",
+  "description": "Independent third-party verifier for the KXCO Chain Dilithium3 (ML-DSA-65) block attestation feed.",
+  "type": "module",
+  "scripts": {
+    "verify": "node verify.js"
+  },
+  "dependencies": {
+    "@noble/post-quantum": "0.2.1",
+    "@noble/hashes": "1.6.1"
+  },
+  "license": "MIT"
+}
