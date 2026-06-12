@@ -1,0 +1,43 @@
+{
+  "service": "KXCO Armature — ML-DSA-65 block attestation (rolling public window)",
+  "algorithm": "ML-DSA-65 (NIST FIPS 204)",
+  "chainId": 1111111,
+  "window": 100,
+  "canonicalMessage": "keccak256(chainId || blockNumber || blockHash)",
+  "note": "Rolling public window of the most recent attestations. The full per-node log is retained on the validators and available on request.",
+  "updatedAt": "2026-06-12T16:31:19.491Z",
+  "nodes": [
+    {
+      "validatorIndex": 1,
+      "pqcAddress": "0x563e34dd4fb564bdc61b9487303292290d92eaf2",
+      "latestBlock": "0x24aa",
+      "latestHash": "0x1c99307bb6f61fd84cb1993bf384d3960f4894598cb842f3f3380506e1645501",
+      "totalAttestations": 393,
+      "chainId": 1111111
+    },
+    {
+      "validatorIndex": 2,
+      "pqcAddress": "0x772cf9d1150b83b8968af99c906a396fbc9e82d3",
+      "latestBlock": "0x24a6",
+      "latestHash": "0x94d15c53d94de1a25aa1c2ce2d331ba26d8eb5185a0cdb31ae9c4e752655b9a9",
+      "totalAttestations": 389,
+      "chainId": 1111111
+    },
+    {
+      "validatorIndex": 3,
+      "pqcAddress": "0x3556b9ca223c4d427e0abc78d5ca9a5b43c6aafb",
+      "latestBlock": "0x24aa",
+      "latestHash": "0x1c99307bb6f61fd84cb1993bf384d3960f4894598cb842f3f3380506e1645501",
+      "totalAttestations": 393,
+      "chainId": 1111111
+    },
+    {
+      "validatorIndex": 4,
+      "pqcAddress": "0x7f81f09554e8342d52c0ef8b3348e51410307578",
+      "latestBlock": "0x24aa",
+      "latestHash": "0x1c99307bb6f61fd84cb1993bf384d3960f4894598cb842f3f3380506e1645501",
+      "totalAttestations": 393,
+      "chainId": 1111111
+    }
+  ]
+}
