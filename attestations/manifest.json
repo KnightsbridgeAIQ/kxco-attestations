@@ -6,14 +6,14 @@
   "canonicalMessage": "keccak256(chainId || blockNumber || blockHash)",
   "note": "Rolling public window of the most recent attestations, updated continuously. Full daily logs are archived permanently as GitHub Release assets (see fullArchive).",
   "fullArchive": "https://github.com/JackKXCO/kxco-attestations/releases",
-  "updatedAt": "2026-09-14T22:40:12.136Z",
+  "updatedAt": "2026-09-14T22:50:12.074Z",
   "nodes": [
     {
       "validatorIndex": 1,
       "pqcAddress": "0x563e34dd4fb564bdc61b9487303292290d92eaf2",
-      "latestBlock": "0x3d6fea",
-      "latestHash": "0x5e50eec17b7de12491daa5c23d2f5a05d7e0a57e619671da58619ca79ca5a0e9",
-      "attestationsInCurrentLog": 27076,
+      "latestBlock": "0x3d7118",
+      "latestHash": "0xea4e63a6c5854d3a5118bbcfb83b5d6bbecf56086ff6f86d862b67f74d7e3620",
+      "attestationsInCurrentLog": 27378,
       "chainId": 1111111
     },
     {
@@ -35,9 +35,9 @@
     {
       "validatorIndex": 4,
       "pqcAddress": "0x7f81f09554e8342d52c0ef8b3348e51410307578",
-      "latestBlock": "0x3d6fed",
-      "latestHash": "0x2c505d40e2a457767c076d56f0cee3f6c1f136cdd21940a71bec7a844785f500",
-      "attestationsInCurrentLog": 27067,
+      "latestBlock": "0x3d7117",
+      "latestHash": "0x332838ce0bca6a85f088f72d888192f281e288ab4512c99435ceb49ba2cac719",
+      "attestationsInCurrentLog": 27365,
       "chainId": 1111111
     }
   ]
