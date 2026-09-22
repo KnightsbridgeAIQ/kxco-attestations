@@ -6,38 +6,38 @@
   "canonicalMessage": "keccak256(chainId || blockNumber || blockHash)",
   "note": "Rolling public window of the most recent attestations, updated continuously. Full daily logs are archived permanently as GitHub Release assets (see fullArchive).",
   "fullArchive": "https://github.com/KnightsbridgeAIQ/kxco-attestations/releases",
-  "updatedAt": "2026-09-22T16:26:04.891Z",
+  "updatedAt": "2026-09-22T16:36:23.438Z",
   "nodes": [
     {
       "validatorIndex": 1,
       "pqcAddress": "0x563e34dd4fb564bdc61b9487303292290d92eaf2",
-      "latestBlock": "0x4289e0",
-      "latestHash": "0x5fd41d934a535c93404e927c8330b32a2d5484e502e1c7a1e4ea0617515b188f",
-      "attestationsInCurrentLog": 29855,
+      "latestBlock": "0x428b19",
+      "latestHash": "0xe06abb9c233abc8ce8a0a3be07b5220d2c3cabb02895e7251429194fef0fc97b",
+      "attestationsInCurrentLog": 30168,
       "chainId": 1111111
     },
     {
       "validatorIndex": 2,
       "pqcAddress": "0x772cf9d1150b83b8968af99c906a396fbc9e82d3",
-      "latestBlock": "0x4289e1",
-      "latestHash": "0x34652a45d86595137e34f4ed5f356e95eea9b9021394821ddd291445a2afe85a",
-      "attestationsInCurrentLog": 29845,
+      "latestBlock": "0x428b1a",
+      "latestHash": "0xcf38f787f90e51c86795e05c332af1ae9328d0df71eed5c34f702fdccb8ddb28",
+      "attestationsInCurrentLog": 30158,
       "chainId": 1111111
     },
     {
       "validatorIndex": 3,
       "pqcAddress": "0x3556b9ca223c4d427e0abc78d5ca9a5b43c6aafb",
-      "latestBlock": "0x4289e1",
-      "latestHash": "0x34652a45d86595137e34f4ed5f356e95eea9b9021394821ddd291445a2afe85a",
-      "attestationsInCurrentLog": 29831,
+      "latestBlock": "0x428b1b",
+      "latestHash": "0xd5347a0b92be8a58863d60a2637e632948cdf2b5a18223787cb1416339e569bc",
+      "attestationsInCurrentLog": 30145,
       "chainId": 1111111
     },
     {
       "validatorIndex": 4,
       "pqcAddress": "0x7f81f09554e8342d52c0ef8b3348e51410307578",
-      "latestBlock": "0x4289e6",
-      "latestHash": "0x645b7bba9914a8a3559cf84581c9f81d4d41d8f09f7e97d0d1655233a3a28f72",
-      "attestationsInCurrentLog": 29826,
+      "latestBlock": "0x428b1b",
+      "latestHash": "0xd5347a0b92be8a58863d60a2637e632948cdf2b5a18223787cb1416339e569bc",
+      "attestationsInCurrentLog": 30135,
       "chainId": 1111111
     }
   ]
