@@ -1,10 +1,11 @@
 {
   "name": "kxco-public-verifier",
-  "version": "1.0.0",
-  "description": "Independent third-party verifier for the KXCO Chain Dilithium3 (ML-DSA-65) block attestation feed.",
+  "version": "1.1.0",
+  "description": "Independent third-party verifier for the KXCO Chain ML-DSA (FIPS 204) block attestation feed: ML-DSA-65 and ML-DSA-87 keys, with key history.",
   "type": "module",
   "scripts": {
-    "verify": "node verify.js"
+    "verify": "node verify.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "@noble/post-quantum": "0.2.1",
