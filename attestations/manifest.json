@@ -6,38 +6,43 @@
   "canonicalMessage": "keccak256(chainId || blockNumber || blockHash)",
   "note": "Rolling public window of the most recent attestations, updated continuously. Full daily logs are archived permanently as GitHub Release assets (see fullArchive).",
   "fullArchive": "https://github.com/KnightsbridgeAIQ/kxco-attestations/releases",
-  "updatedAt": "2026-10-07T02:41:24.595Z",
+  "keyHistory": "https://raw.githubusercontent.com/KnightsbridgeAIQ/kxco-attestations/main/attestations/validator-keys.json",
+  "updatedAt": "2026-10-07T02:51:12.005Z",
   "nodes": [
     {
       "validatorIndex": 1,
       "pqcAddress": "0x563e34dd4fb564bdc61b9487303292290d92eaf2",
-      "latestBlock": "0x4c0b4b",
-      "latestHash": "0x52a66c97b630af3adf0ee05758c94f9e476ad78896c221e478d810ce72479702",
-      "attestationsInCurrentLog": 5120,
+      "algorithm": "ML-DSA-65",
+      "latestBlock": "0x4c0c72",
+      "latestHash": "0xafc0f1e4c3fd8ff010e5789aa3af338df59fb199bc5412cfd632255ef0f3a63f",
+      "attestationsInCurrentLog": 5415,
       "chainId": 1111111
     },
     {
       "validatorIndex": 2,
       "pqcAddress": "0x772cf9d1150b83b8968af99c906a396fbc9e82d3",
-      "latestBlock": "0x4c0b51",
-      "latestHash": "0x08278987a7063d34e83e8a344018d1314fc5eb396a06941bea9a632c434fd34f",
-      "attestationsInCurrentLog": 5112,
+      "algorithm": "ML-DSA-65",
+      "latestBlock": "0x4c0c71",
+      "latestHash": "0xc817089886ed35009c6327e330d9b46f6e963c9eafe164033dc5f0acd8f30e74",
+      "attestationsInCurrentLog": 5400,
       "chainId": 1111111
     },
     {
       "validatorIndex": 3,
       "pqcAddress": "0x3556b9ca223c4d427e0abc78d5ca9a5b43c6aafb",
-      "latestBlock": "0x4c0b4f",
-      "latestHash": "0xc6c56be654eee15a146828029cafbfea8e5f1321ee1e3410f4f46d17f3ed1c78",
-      "attestationsInCurrentLog": 5097,
+      "algorithm": "ML-DSA-65",
+      "latestBlock": "0x4c0c77",
+      "latestHash": "0x12e199f0cc19142ef62787faac0ffc4b0c1a836024faccd25a25ecd86d6cb2ac",
+      "attestationsInCurrentLog": 5393,
       "chainId": 1111111
     },
     {
       "validatorIndex": 4,
       "pqcAddress": "0x7f81f09554e8342d52c0ef8b3348e51410307578",
-      "latestBlock": "0x4c0b52",
-      "latestHash": "0x580e1acc275bd32e415d16190c4e46a1b467001e46dfe28226cc67eb81cb963c",
-      "attestationsInCurrentLog": 5089,
+      "algorithm": "ML-DSA-65",
+      "latestBlock": "0x4c0c7a",
+      "latestHash": "0x5897fd0f14316c02d2d0ea8665da6d2ff452582db79458b8a90a70bc114d85c9",
+      "attestationsInCurrentLog": 5385,
       "chainId": 1111111
     }
   ]
