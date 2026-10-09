@@ -1,48 +1,48 @@
 {
-  "service": "KXCO Armature — ML-DSA-87 and ML-DSA-65 block attestation (rolling public window)",
-  "algorithm": "ML-DSA-87 and ML-DSA-65 (NIST FIPS 204)",
+  "service": "KXCO Armature — ML-DSA-87 block attestation (rolling public window)",
+  "algorithm": "ML-DSA-87 (NIST FIPS 204)",
   "chainId": 1111111,
   "window": 100,
   "canonicalMessage": "keccak256(chainId || blockNumber || blockHash)",
   "note": "Rolling public window of the most recent attestations, updated continuously. Full daily logs are archived permanently as GitHub Release assets (see fullArchive).",
   "fullArchive": "https://github.com/KnightsbridgeAIQ/kxco-attestations/releases",
   "keyHistory": "https://raw.githubusercontent.com/KnightsbridgeAIQ/kxco-attestations/main/attestations/validator-keys.json",
-  "updatedAt": "2026-10-09T01:50:56.141Z",
+  "updatedAt": "2026-10-09T02:00:55.622Z",
   "nodes": [
     {
       "validatorIndex": 1,
-      "pqcAddress": "0x563e34dd4fb564bdc61b9487303292290d92eaf2",
-      "algorithm": "ML-DSA-65",
-      "latestBlock": "0x4d56e3",
-      "latestHash": "0xba3b730822b6792eb79ae7957eb70a2d6e706a1d015dcacfbd18bc6deaf7981d",
-      "attestationsInCurrentLog": 3606,
+      "pqcAddress": "0x47fb5302554dcd73e51f0de27e9537ab353e54ec",
+      "algorithm": "ML-DSA-87",
+      "latestBlock": "0x4d580b",
+      "latestHash": "0x313a6ce319aa750616bf2b044c445c26ee03c0133c6ded03a9f2173b4fbf71c9",
+      "attestationsInCurrentLog": 3902,
       "chainId": 1111111
     },
     {
       "validatorIndex": 2,
       "pqcAddress": "0x72b5c6d531871c41a1ffedf6f2398329304a1b09",
       "algorithm": "ML-DSA-87",
-      "latestBlock": "0x4d56e1",
-      "latestHash": "0x426ca0787be1fcf8f7ce178275f866f1f8ee30db4abff766bbf71b1011443ed2",
-      "attestationsInCurrentLog": 3596,
+      "latestBlock": "0x4d5811",
+      "latestHash": "0xa9e53807cefbfa59a90cacf7459859afbc1b33205bfeadd216975ecd5e2271a7",
+      "attestationsInCurrentLog": 3900,
       "chainId": 1111111
     },
     {
       "validatorIndex": 3,
       "pqcAddress": "0x80c1cd3f9b91ce02aa76ee5cf27ef1a010f0bb46",
       "algorithm": "ML-DSA-87",
-      "latestBlock": "0x4d56e6",
-      "latestHash": "0x07d3c81a6a2c17da8cabe87e024a64806ae3f73e7f385c537dd944d8343eff4a",
-      "attestationsInCurrentLog": 3589,
+      "latestBlock": "0x4d580e",
+      "latestHash": "0x61b82453037ea5073e52c50eb6a614b0dd0c502a4cff8d337432caa2af91f2e0",
+      "attestationsInCurrentLog": 3885,
       "chainId": 1111111
     },
     {
       "validatorIndex": 4,
       "pqcAddress": "0xbbf2f20486d3e8f305a3a72a3c78230d2a498fd5",
       "algorithm": "ML-DSA-87",
-      "latestBlock": "0x4d56e6",
-      "latestHash": "0x07d3c81a6a2c17da8cabe87e024a64806ae3f73e7f385c537dd944d8343eff4a",
-      "attestationsInCurrentLog": 3573,
+      "latestBlock": "0x4d5815",
+      "latestHash": "0x1f34797835ae356c7f6a8e290e2af4456bf3ee5f33401251a83b744cc80a5ce1",
+      "attestationsInCurrentLog": 3876,
       "chainId": 1111111
     }
   ]
