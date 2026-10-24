@@ -57,7 +57,7 @@ Options:
 1. **Message canonicalisation.** Recomputes `keccak256(chainId ‖ blockNumber ‖ blockHash)` and confirms it equals `messageHex`.
 2. **The right key.** Each record names the `pqcAddress` of the key that signed it. The verifier takes that key from the key history, never from the feed, and refuses a record whose key is not listed, belongs to another validator, or is outside the blocks published for that key.
 3. **Block hash match.** Calls `eth_getBlockByNumber` on the Armature RPC; the hash returned must equal `blockHash`.
-4. **Signature verification.** Verifies the signature with the parameter set of the key: a 1,952-byte key is ML-DSA-65 and a 2,592-byte key is ML-DSA-87 (public key sizes per FIPS 204, Table 2). A record whose `algorithm` label names the other set fails.
+4. **Signature verification.** Verifies the signature with the parameter set of the key: a 2,592-byte key is ML-DSA-87, the set every validator attests with today, and a 1,952-byte key is ML-DSA-65, the set of the validators' earlier keys (public key sizes per FIPS 204, Table 2). A record whose `algorithm` label names the other set fails.
 5. **Sequential coverage.** With `--strict`, every block from the first attested through the last must have a record.
 
 ## The key history
