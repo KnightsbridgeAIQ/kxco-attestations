@@ -1,12 +1,12 @@
-# KXCO Chain: Independent Attestation Verifier
+# Armature: Independent Attestation Verifier
 
-**This directory is intentionally public.** It contains what an independent third party needs to check, end to end, that each KXCO Chain validator signs every finalised block with its post-quantum ML-DSA (FIPS 204) attestation key.
+**This directory is intentionally public.** It contains what an independent third party needs to check, end to end, that each validator of Armature, KXCO's public record, signs every finalised block with its post-quantum ML-DSA (FIPS 204) attestation key.
 
 You check three things against three sources:
 
 1. The attestation feed (NDJSON, one record per block per validator).
 2. The published key history (`validator-keys.json`): each validator's public keys, the blocks each key signed, and a signed rotation manifest for every key change.
-3. The KXCO Chain RPC endpoint, which confirms that each attested block hash is the chain's block at that height.
+3. An Armature RPC endpoint, which confirms that each attested block hash is the chain's block at that height.
 
 If any of those disagree, this verifier flags it.
 
@@ -15,7 +15,7 @@ If any of those disagree, this verifier flags it.
 - Node.js 22+
 - A feed: the rolling window in `attestations/kxco-attestations-node<N>-latest.ndjson`, or a full day from the repository's releases (`node<N>-<date>.ndjson.gz`)
 - The key history: `attestations/validator-keys.json`
-- The KXCO Chain RPC URL: `https://chain.kxco.ai/rpc`
+- An Armature RPC URL. Both verifiers use KXCO's public one, `https://api.purse.kxco.ai/rpc/armature`, unless you pass another with `--rpc`.
 
 ## How to run
 
@@ -37,7 +37,7 @@ node verify_live.js --strict
 A successful run ends:
 
 ```text
-ML-DSA-65 0x563e34dd4fb564bdc61b9487303292290d92eaf2: 100 verified
+ML-DSA-87 0x47fb5302554dcd73e51f0de27e9537ab353e54ec: 100 verified
 Verified: 100  Failed: 0  Total: 100
 
 All attestations verified end-to-end.
@@ -49,14 +49,14 @@ Options:
 
 - `--keys <file-or-url>`: the key history (repeatable). A validator manifest (`kxco-manifest-node<N>.json`) is also accepted.
 - `--registry <address>`: read each key from a contract exposing `getPublicKey(address)`, looked up by the record's `pqcAddress`, instead of `--keys`.
-- `--rpc <url>`: the chain RPC used for the block-hash check.
+- `--rpc <url>`: the Armature RPC used for the block-hash check (default `https://api.purse.kxco.ai/rpc/armature`).
 - `--strict`: also fail on any gap in block numbers for a validator.
 
 ## What the verifier checks per attestation
 
 1. **Message canonicalisation.** Recomputes `keccak256(chainId ‖ blockNumber ‖ blockHash)` and confirms it equals `messageHex`.
 2. **The right key.** Each record names the `pqcAddress` of the key that signed it. The verifier takes that key from the key history, never from the feed, and refuses a record whose key is not listed, belongs to another validator, or is outside the blocks published for that key.
-3. **Block hash match.** Calls `eth_getBlockByNumber` on the chain RPC; the hash returned must equal `blockHash`.
+3. **Block hash match.** Calls `eth_getBlockByNumber` on the Armature RPC; the hash returned must equal `blockHash`.
 4. **Signature verification.** Verifies the signature with the parameter set of the key: a 1,952-byte key is ML-DSA-65 and a 2,592-byte key is ML-DSA-87 (public key sizes per FIPS 204, Table 2). A record whose `algorithm` label names the other set fails.
 5. **Sequential coverage.** With `--strict`, every block from the first attested through the last must have a record.
 

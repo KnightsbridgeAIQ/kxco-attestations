@@ -3,7 +3,7 @@
 // window, and the chain RPC's block hashes. Nothing is read from KXCO but the
 // repository and the public RPC.
 //
-// Usage: node verify_live.js [--repo KnightsbridgeAIQ/kxco-attestations] [--raw <mirror-url>] [--rpc https://chain.kxco.ai/rpc] [--strict]
+// Usage: node verify_live.js [--repo KnightsbridgeAIQ/kxco-attestations] [--raw <mirror-url>] [--rpc https://api.purse.kxco.ai/rpc/armature] [--strict]
 //
 // Exit 0 when every window verifies, 1 on any failure, 2 if something could
 // not be read.
@@ -15,7 +15,7 @@ import { fileURLToPath } from 'url'
 const args = process.argv.slice(2)
 const value = (name, fallback) => (args.includes(name) ? args[args.indexOf(name) + 1] : fallback)
 const REPO = value('--repo', 'KnightsbridgeAIQ/kxco-attestations')
-const RPC = value('--rpc', 'https://chain.kxco.ai/rpc')
+const RPC = value('--rpc', 'https://api.purse.kxco.ai/rpc/armature')
 const RAW = value('--raw', `https://raw.githubusercontent.com/${REPO}/main/attestations`)   // or a mirror of that folder
 const HERE = dirname(fileURLToPath(import.meta.url))
 
