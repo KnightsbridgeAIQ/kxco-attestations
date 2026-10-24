@@ -1,7 +1,7 @@
 /**
- * Canonical message format for KXCO Chain Dilithium3 block attestations.
+ * Canonical message format for Armature block attestations.
  * Mirrors docker/attestation/message.js exactly. Do not modify in only one
- * location — the encoding must remain identical between signer and verifier.
+ * location: the encoding must remain identical between signer and verifier.
  *
  * Message = keccak256( chainId(4 BE) || blockNumber(8 BE) || blockHash(32) )
  */

@@ -1,5 +1,5 @@
 /**
- * KXCO Chain — Public Attestation Verifier
+ * Armature: Public Attestation Verifier
  *
  * Verifies an NDJSON attestation feed end-to-end:
  *   1. Each entry's signature verifies under the key its pqcAddress names, with
@@ -19,9 +19,9 @@
  *                  [--registry <address>] [--rpc <url>] [--strict]
  *
  * Exit codes:
- *   0 — all entries verified
- *   1 — one or more verification failures
- *   2 — could not fetch feed, keys, registry, or RPC
+ *   0: all entries verified
+ *   1: one or more verification failures
+ *   2: could not fetch feed, keys, registry or RPC
  */
 
 import { ml_dsa65, ml_dsa87 } from '@noble/post-quantum/ml-dsa'
@@ -42,7 +42,7 @@ const HISTORY_SCHEMA = 'kxco-validator-attestation-keys/1'
 
 // ── CLI ─────────────────────────────────────────────────────────────
 const args = process.argv.slice(2)
-const RPC_URL = argValue('--rpc') || 'https://chain.kxco.ai/rpc'
+const RPC_URL = argValue('--rpc') || 'https://api.purse.kxco.ai/rpc/armature'
 const REGISTRY = argValue('--registry')                 // 0x… address of a getPublicKey(address) registry
 const KEYS = argValues('--keys')                        // published key history (or sidecar manifests)
 const STRICT = args.includes('--strict')                // also enforce no gaps in block numbers
@@ -297,18 +297,18 @@ async function main() {
     // 1. Re-derive the canonical message
     const expectedMessage = buildMessage(chainId, blockNumber, blockHash)
     if (messageHex !== bytesToHex(expectedMessage)) {
-      console.error(`  FAIL  block ${blockNumber} — message hash mismatch`)
+      console.error(`  FAIL  block ${blockNumber}: message hash mismatch`)
       failed++; continue
     }
 
     // 2. The key this record names, from the trusted source
     const { key, reason } = await keyFor(entry)
     if (!key) {
-      console.error(`  FAIL  block ${blockNumber} — ${reason}`)
+      console.error(`  FAIL  block ${blockNumber}: ${reason}`)
       failed++; continue
     }
     if (entry.algorithm !== undefined && entry.algorithm !== key.set.label) {
-      console.error(`  FAIL  block ${blockNumber} — record says ${entry.algorithm} but the key is ${key.set.label}`)
+      console.error(`  FAIL  block ${blockNumber}: record says ${entry.algorithm} but the key is ${key.set.label}`)
       failed++; continue
     }
 
@@ -316,12 +316,12 @@ async function main() {
     try {
       const chainHash = await chainBlockHash(RPC_URL, blockNumber)
       if (chainHash && chainHash !== blockHash) {
-        console.error(`  FAIL  block ${blockNumber} — chain hash ${chainHash} != attested ${blockHash}`)
+        console.error(`  FAIL  block ${blockNumber}: chain hash ${chainHash} != attested ${blockHash}`)
         failed++; continue
       }
     } catch (e) {
-      // Don't fail the run for transient RPC errors — but log it.
-      console.warn(`  WARN  block ${blockNumber} — chain RPC unreachable: ${e.message}`)
+      // Don't fail the run for transient RPC errors, but log them.
+      console.warn(`  WARN  block ${blockNumber}: chain RPC unreachable: ${e.message}`)
     }
 
     // 4. Signature verify, with the key's own parameter set
@@ -330,7 +330,7 @@ async function main() {
       passed++
       perKey.set(key.pqcAddress, [key.set.label, (perKey.get(key.pqcAddress)?.[1] || 0) + 1])
     } else {
-      console.error(`  FAIL  block ${blockNumber} — invalid ${key.set.label} signature`)
+      console.error(`  FAIL  block ${blockNumber}: invalid ${key.set.label} signature`)
       failed++
     }
   }
